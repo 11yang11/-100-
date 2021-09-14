@@ -1,0 +1,8 @@
+import sys
+sys.path.append("d:\lib\site-packages")
+#给后续命令指出bio路径，使其可以调用
+from Bio import SeqIO
+#Biopython的SeqIO (序列输入/输出)接口可用于读取序列文件。
+for record in SeqIO.parse("d:\华大\human_mitochondrial.fasta", "fasta"):
+#parse()函数获取一个文件(具有文件句柄和格式)，并返回一个SeqRecord迭代器。
+    print(record.id,record.seq)
